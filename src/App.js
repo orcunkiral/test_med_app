@@ -7,22 +7,28 @@ import Login from './Components/Login/Login';
 import InstantConsultation from './Components/InstantConsultationBooking/InstantConsultation';
 import FindDoctorSearch from './Components/FindDoctorSearch/FindDoctorSearch';
 import BookingConsultation from './Components/BookingConsultation';
+import Notification from './Components/Notification/Notification';
+
 
 function App() {
     return (
         <div className="App">
-            <BrowserRouter>
-                    <Navbar />
-                    <Routes>
-                        <Route path="/LandingPage" element={<LandingPage />} />
-                        <Route path="/Sign_Up" element={<Sign_Up />} />
-                        <Route path="/Login" element={<Login />} />
-                        <Route path="/instant-consultation" element={<InstantConsultation />} />
-                        <Route path='/finddoctor' element={<FindDoctorSearch />} />
-                        <Route path='/search/doctors' element={<BookingConsultation />} />
-                  </Routes>
-            </BrowserRouter>
-        </div>
+        <BrowserRouter>
+            <Notification>
+                <Navbar />
+                <Routes>
+                    <Route path="/LandingPage" element={<LandingPage />} />
+                    <Route path="/Sign_Up" element={<Sign_Up />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/instant-consultation" element={<InstantConsultation />} />
+                    <Route path="/finddoctor" element={<FindDoctorSearch />} />
+                    <Route path='/search/doctors' element={<BookingConsultation />} />
+                 
+                </Routes>
+            </Notification>
+        </BrowserRouter>
+
+    </div>
     );
 }
 export default App;
